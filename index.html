@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/> <!-- link to stylesheet CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+    <link href="assets/style/dashboard.css" rel="stylesheet"/> 
+  </head>
+  <body>
+    <div class="container">
+      
+      <div class="row header">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <h3>Your Shoping Bag</h3>
+        </div>
+      </div>
+
+      <div class="row cart-products">
+        
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 headers">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <span class="count"></span> ITEMS
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            SIZE
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            QTY
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            PRICE
+          </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 product-item-template hide" product-id="">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <img src="assets/P1.jpg" class="img-responsive pull-left"/>
+            <div>
+              <span class="title"></span>
+              <div> Style #: <span class="style"> </span></div>
+              <div> Colour: <span  class="color"> </span></div>
+
+              <div class="action">
+                <span><a href="#" class="edit" data-toggle="modal" data-target="#ItemModal">Edit</a></span>
+                <span><a href="#" class="remove">Remove</a></span>
+                <span><a href="#" class="save">Save For Later</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <b class="size"></b>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <span class="qty"> </span>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <span class="currency"></span>
+            <span class="price"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row cart">
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pull-right">
+          
+          <div class="row promo-code">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              ENTER PROMOTION CODE OR GIFT CARD
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <div class="pull-right form-inline">
+                <input type="text" class="form-control">
+                <button type="submit" class="btn btn-default">APPLY</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row subtotal">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+               SUBTOTAL
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+              <div class="pull-right">
+                <span class="currency">$</span>
+                <span class="price">37.00</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row code-applied">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+              PROMOTION CODE JF<span>0</span> APPLIED
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+              <div class="pull-right">
+                <span class="currency">$</span>
+                <span class="price"> -7.00</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+              <div>ESTIMATED SHIPPING*</div>
+              <div>You qualify for free shipping </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+              <div class="pull-right">
+                FREE
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="row estimated-total">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 ">
+              <h4>ESTIMATED TOTAL</h4>
+              <div>Tax will be applied during checkout</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+              <div class="pull-right">
+                <span class="currency">$</span>
+                <span class="price">30.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="pull-right">
+                <button class="btn btn-primary"> CHECKOUT</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 pull-left">
+          <div>Need help or have questions?</div>
+          <div>Call Customer Service at 1-800-555-5555</div>
+        </div>
+      </div>
+
+    </div>
+     
+    <div id="ItemModal" class="modal fade" product-id="">
+      <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                      <div class="title">PAISLEY JEAN</div>
+                      <span class="currency">$</span>
+                      <span class="price">12</span>
+                      <div class="">PAISLEY</div>
+                      <span class="color"></span>
+                      <span class="color"></span>
+                      <span class="size">
+                        SIZE:
+                        <select>
+                          <option value="s">S</option>
+                          <option value="m">M</option>
+                          <option value="l">L</option>
+                        </select>
+                      </span>
+                      <span class="qty"> QTY:
+                        <select>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                      </span>
+                      <div><button type="button" class="btn btn-primary edit" data-dismiss="modal"> EDIT </button></div>
+                      <div><a href="#">See product details</a></div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                      <img src="assets/P1.jpg" class="img-responsive pull-left"/>
+                    </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <script src="assets/scripts/dashboard.js"></script>
+
+  </body>
+</html>

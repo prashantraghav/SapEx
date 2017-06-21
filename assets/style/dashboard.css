@@ -1,0 +1,74 @@
+body{
+  padding-bottom: 40px;
+}
+
+.container > .header{
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 40px;
+}
+
+.cart-products{
+}
+
+.cart-products > .headers{
+  border-bottom: 5px solid lightgray;
+  padding: 10px 0;
+}
+
+
+.cart-products > .product-item{
+  padding: 20px 10px;
+}
+
+.cart-products > .product-item:last-child, .cart .promo-code{
+  border-bottom: 5px solid lightgray;
+}
+
+
+.product-item .title, .product-item .style, .product-item .color, .size{
+  text-transform: uppercase;
+}
+
+.product-item .action {
+  margin-top: 2%;
+}
+.product-item .action > span:not(:last-child){
+  border-right: 1px solid lightgray;
+  padding: 1px 5px 0 0;
+}
+
+.cart{
+  margin-top: 80px;
+}
+
+.cart > div > div.row:nth-child(2){
+  margin-top: 30px;
+}
+.cart > div > div.row{
+  padding-bottom: 40px;
+}
+
+.cart > div > div.row:last-child{
+  margin-top: 30px;
+}
+
+.cart .promo-code, .cart .estimated-total{
+  border-bottom: 5px solid lightgray;
+}
+
+span.currency{
+  font-size: 10px;
+  position: relative;
+  top: -5px;
+}
+
+.estimated-total span.price{ 
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.estimated-total span.currency{
+  font-weight: bold;
+  font-size: 17px;
+
+}
