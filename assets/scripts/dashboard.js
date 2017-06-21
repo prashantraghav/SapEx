@@ -65,7 +65,7 @@ function Product(product){
     _this.$product_item.find('.currency').html(product.c_currency);
     _this.$product_item.find('.price').html(formatFloat(_this.price()));
 
-    if(!$.contains($('.cart-products'), _this.$product_item))
+    if(_this.$product_item.closest('.cart-products').length < 1)
       _this.$product_item.appendTo('.cart-products');
   }
 }
